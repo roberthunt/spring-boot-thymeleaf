@@ -4,8 +4,9 @@ Simply run from the command line using `./mvnw spring-boot:run` and then open ht
 
 ![](example.png)
 
-See `SpringBootThymeleafApplication` which is marked as a Spring MVC `@Controller` and has one `@GetMapping` to serve a
-Thymeleaf templated called `index` and is located at `src/main/resources/templates/index.html`.
+See [SpringBootThymeleafApplication](src/main/java/uk/co/rbrt/springbootthymeleaf/SpringBootThymeleafApplication.java) 
+which is marked as a Spring MVC `@Controller` and has one `@GetMapping` to serve a Thymeleaf templated called 
+`index` and is located at [src/main/resources/templates/index.html](src/main/resources/templates/index.html).
 
 A Java `record` represents a customer with 4 fields, an id, created date, name and active flag. A list of customers is
 created in the controller method and returned ot the view via the Spring MVC `Model`.
