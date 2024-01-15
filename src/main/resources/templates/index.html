@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Spring Boot Thymeleaf Demo</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>There are <th:block th:text="${customers.size()}"/> Customers!</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Created</th>
+            <th>Name</th>
+            <th>Active</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.id}">1</td>
+            <td th:text="${#temporals.format(customer.created, 'dd-MMM-yyyy')}">15-Jan-2024</td>
+            <td th:text="${customer.name}">John Doe</td>
+            <td th:text="${customer.active} ? 'Yes' : 'No'">True</td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
